@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/register" method="post">
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username" value={{username}}>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+    <br>
+    <label for="password">Verify Password:</label>
+    <input type="password" name="verpassword" id="verpassword">
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" value={{email}}>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+{% if error %}
+  <p class='error'>{{error}}</p>
+{% endif %}
+
+{% endblock %}
